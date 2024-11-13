@@ -60,6 +60,7 @@ func (mod *Sign) Do() {
 }
 func (mod *Sign) sign(isSign bool) {
 	if !isSign {
+		log.Println("今日已签到")
 		return
 	}
 	req := &http.Request{Header: mod.header(), Method: "POST", Body: io.NopCloser(strings.NewReader("{}"))}

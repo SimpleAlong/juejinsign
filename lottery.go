@@ -25,6 +25,7 @@ func (mod *Sign) Lottery() {
 	content, _ := io.ReadAll(rsp.Body)
 	err = json.Unmarshal(content, &conf)
 	if conf.Data.FreeCount == 0 {
+		log.Println("今日免费已抽")
 		return
 	}
 	req = &http.Request{Header: mod.header(), Method: "POST", Body: io.NopCloser(strings.NewReader("{}"))}

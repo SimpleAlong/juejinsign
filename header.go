@@ -32,5 +32,5 @@ func (mod *Sign) handleHeader(h http.Header) {
 	h.Set("sec-fetch-mode", "cors")
 	h.Set("sec-fetch-site", "same-site")
 	h.Set("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36")
-	//h.Set("x-secsdk-csrf-token", mod.token)
+	h.Set("x-secsdk-csrf-token", mod.token)
 }
