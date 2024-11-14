@@ -31,9 +31,14 @@ type Sign struct {
 	token   string
 }
 
-func New() *Sign {
-	return new(Sign)
+func New(options ...Option) *Sign {
+	s := new(Sign)
+	for _, option := range options {
+		option(s)
+	}
+	return s
 }
+
 func (mod *Sign) AddAid(aid int64) {
 	mod.aid = aid
 }
